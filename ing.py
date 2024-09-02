@@ -87,8 +87,17 @@ def add_to_redis(df,product_name,category_key):
     df_json = df.to_json(orient='split')
     redis_client.hset(category_key, product_name, df_json)
 
-redis_url = os.getenv('REDIS_URL', 'redis://localhost:6379')
-redis_client = redis.Redis.from_url(redis_url, decode_responses=True)
+redis_host = os.getenv('REDIS_HOST')
+redis_port = int(os.getenv('REDIS_PORT'))
+redis_password = os.getenv('REDIS_PASSWORD')
+
+# Initialize Redis client
+redis_client = redis.Redis(
+    host=redis_host,
+    port=redis_port,
+    password=redis_password,
+    decode_responses=True
+)
 st.title("Label Lens ")
 
 category = st.selectbox(
