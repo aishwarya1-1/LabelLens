@@ -276,12 +276,3 @@ if(category):
                             st.write("The comparison could not be performed. Please try again.")
                 else:
                     st.write("Please select both products to compare.")
-
-
-
-
-
-
-
-
-
