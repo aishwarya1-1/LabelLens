@@ -1,0 +1,10 @@
+python-dotenv
+streamlit
+Pillow
+redis
+langchain-google-genai
+langchain-community
+faiss-cpu
+pandas
+ipython
+google-generativeai
